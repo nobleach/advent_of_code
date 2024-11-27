@@ -1,0 +1,13 @@
+name: day01
+version: 0.1.0
+
+authors:
+  - Jim Wharton <jim.wharton@ww.com>
+
+targets:
+  day01:
+    main: src/day01.cr
+
+crystal: '>= 1.14.0'
+
+license: MIT
