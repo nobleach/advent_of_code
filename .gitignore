@@ -9,3 +9,5 @@ target
 .gradle
 /.zig-cache/
 .zig-cache
+.DS_Store
+/.DS_Store/
