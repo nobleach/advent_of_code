@@ -1,0 +1,11 @@
+/build/
+build
+/_build/
+_build
+.elixir_ls
+.elixir-tools
+/target/
+target
+.gradle
+/.zig-cache/
+.zig-cache

@@ -1,0 +1,12 @@
+{
+  "name": "aoc_2023_typescript",
+  "module": "index.ts",
+  "type": "module",
+  "devDependencies": {
+    "@types/jest": "^29.5.10",
+    "bun-types": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  }
+}

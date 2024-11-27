@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "QO6cNXJLLk39BEA1LbAAmjC7o7MCpT6omAOyY7Hdk2XF6spMGY45q1nMVpGKsgHEs69X85DRtJ9d8IEXLX0CAA==",
+  "success": true,
+  "projectFilePath": "/Users/jim.wharton/Code/advent_of_code/2023/fsharp/nvimfsharp/NvimFsharp.fsproj",
+  "expectedPackageFiles": [
+    "/Users/jim.wharton/.nuget/packages/fsharp.core/8.0.100/fsharp.core.8.0.100.nupkg.sha512"
+  ],
+  "logs": []
+}
