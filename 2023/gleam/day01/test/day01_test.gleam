@@ -20,6 +20,19 @@ pub fn get_nums_from_string_test() {
   |> should.equal([7])
 }
 
+pub fn get_nums_from_string2_test() {
+  day01.get_nums_from_string2("abcone2threexyz")
+  |> should.equal(13)
+
+  day01.get_nums_from_string2("7pqrstsixteen")
+  |> should.equal(76)
+
+  day01.get_nums_from_string2(
+    "seven3lbcvjxqhhdpzkttqsixjzzjjbclfq1fiveeightwojx",
+  )
+  |> should.equal(72)
+}
+
 pub fn get_first_and_last_numbers_test() {
   day01.get_first_and_last_numbers([1, 2])
   |> should.equal(12)
@@ -41,4 +54,17 @@ treb7uchet
     "
   day01.process_lines(input)
   |> should.equal(142)
+}
+
+pub fn process_lines2_test() {
+  let input =
+    "two1nine
+eightwothree
+abcone2threexyz
+xtwone3four
+4nineeightseven2
+zoneight234
+7pqrstsixteen"
+  day01.process_lines2(input)
+  |> should.equal(281)
 }
