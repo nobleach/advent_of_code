@@ -37,13 +37,17 @@ pub fn parse_and_multiply(line: String) -> Int {
 }
 
 pub fn part_one(input: String) -> Int {
+  let input = string.replace(input, "\n", "")
   input
   |> string.trim_end()
   |> parse_and_multiply
 }
 
 pub fn part_two(input: String) -> Int {
-  input
+  let input = string.replace(input, "\n", "")
+  let assert Ok(noop) = regexp.from_string("don't\\(\\)(.*?)(?=do\\(\\)|$)")
+  let filtered = regexp.replace(each: noop, in: input, with: "")
+  filtered
   |> string.trim_end()
-  0
+  |> parse_and_multiply
 }

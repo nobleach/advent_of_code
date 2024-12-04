@@ -24,8 +24,8 @@ pub fn part_one_test() {
 
 pub fn part_two_test() {
   let input =
-    "xmul(2,4)%&mul[3,7]!@^do_not_mul(5,5)+mul(32,64]then(mul(11,8)mul(8,5))"
+    "xmul(2,4)&mul[3,7]!^don't()_mul(5,5)+mul(32,64](mul(11,8)undo()?mul(8,5))"
 
-  day03.part_one(input)
+  day03.part_two(input)
   |> should.equal(48)
 }
