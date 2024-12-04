@@ -39,14 +39,11 @@ pub fn parse_and_multiply(line: String) -> Int {
 pub fn part_one(input: String) -> Int {
   input
   |> string.trim_end()
-  |> string.split("\n")
-  |> list.map(parse_and_multiply)
-  |> int.sum
+  |> parse_and_multiply
 }
 
 pub fn part_two(input: String) -> Int {
   input
   |> string.trim_end()
-  |> string.split("\n")
   0
 }
