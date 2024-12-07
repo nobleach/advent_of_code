@@ -23,7 +23,7 @@ pub fn get_rules(input: String) {
   |> result.unwrap("")
   |> string.split("\n")
   |> list.fold(dict.new(), fn(rules, curr) {
-    // 75|29
+    // 47|53
     let res = case string.split(curr, "|") {
       [hd, tl, ..] ->
         pair.new(
@@ -44,27 +44,21 @@ pub fn get_rules(input: String) {
   })
 }
 
-pub fn get_midpoint_of_passing_reports(
-  report: List(Int),
-  rules: Dict(Int, List(Int)),
-) -> Int {
+pub fn report_passes(report: List(Int), rules: Dict(Int, List(Int))) -> Bool {
   case report {
-    [] | [_] ->
-      report
-      |> list.drop(list.length(report) / 2)
-      |> list.first()
-      |> result.unwrap(0)
-
+    [] | [_] -> True
     [hd, ..tl] -> {
-      let assert Ok(rule) = dict.get(rules, hd)
-      io.debug(tl)
+      let rule = case dict.get(rules, hd) {
+        Ok(rule) -> rule
+        _ -> []
+      }
       let assert Ok(snd) = list.first(tl)
 
       use <- bool.guard(
         when: list.contains(rule, snd),
-        return: get_midpoint_of_passing_reports(tl, rules),
+        return: report_passes(tl, rules),
       )
-      0
+      False
     }
   }
 }
@@ -82,8 +76,24 @@ pub fn get_update_log(input: String) -> List(List(Int)) {
   })
 }
 
-pub fn part_one(input: String) {
-  143
+pub fn part_one(input: String) -> Int {
+  let rules = get_rules(input)
+  let update_log = get_update_log(input)
+
+  update_log
+  |> list.fold(0, fn(acc, curr) {
+    let midpoint = case report_passes(curr, rules) {
+      False -> 0
+      True -> {
+        curr
+        |> list.drop(list.length(curr) / 2)
+        |> list.first()
+        |> result.unwrap(0)
+      }
+    }
+
+    acc + midpoint
+  })
 }
 
 pub fn part_two(input: string) {

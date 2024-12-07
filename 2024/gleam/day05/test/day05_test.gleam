@@ -1,6 +1,5 @@
 import day05
 import gleam/dict
-import gleam/io
 import gleam/list
 import gleeunit
 import gleeunit/should
@@ -40,7 +39,6 @@ pub fn part_one_test() {
 75,97,47,61,53
 61,13,29
 97,13,75,29,47"
-
   day05.part_one(input)
   |> should.equal(143)
 }
@@ -116,7 +114,7 @@ pub fn get_rules_test() {
   |> should.equal(Ok([29, 53, 47, 61, 13]))
 }
 
-pub fn get_midpoint_of_passing_reports_test() {
+pub fn report_passes_test() {
   let rules =
     dict.from_list([
       #(29, [13]),
@@ -127,6 +125,9 @@ pub fn get_midpoint_of_passing_reports_test() {
       #(97, [13, 61, 47, 29, 53, 75]),
     ])
 
-  day05.get_midpoint_of_passing_reports([75, 47, 61, 53, 29], rules)
-  |> should.equal(61)
+  day05.report_passes([75, 47, 61, 53, 29], rules)
+  |> should.equal(True)
+
+  day05.report_passes([47, 61, 53, 29, 75], rules)
+  |> should.equal(False)
 }
