@@ -1,7 +1,0 @@
-{
-  "dependencies": {},
-  "devDependencies": {
-    "@jest/types": "^29.6.3",
-    "@types/bun": "^1.1.14"
-  }
-}
