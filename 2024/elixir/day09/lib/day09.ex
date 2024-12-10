@@ -35,4 +35,10 @@ defmodule Day09 do
   def interleave([], [], result), do: result |> Enum.reverse()
   def interleave([], b, result), do: interleave(b, [], result)
   def interleave([h | t], b, result), do: interleave(b, t, [h | result])
+
+  def swap(a, i1, i2) do
+    {first, [e1 | middle]} = Enum.split(a, i1)
+    {middle, [e2 | rest]} = Enum.split(middle, i2 - i1 - 1)
+    List.flatten([first, e2, middle, e1, rest])
+  end
 end
