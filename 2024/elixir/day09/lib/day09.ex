@@ -1,6 +1,8 @@
 defmodule Day09 do
-  def hello do
-    :world
+  def hello([hd, snd | tl]) do
+    IO.inspect(hd)
+    IO.inspect(snd)
+    IO.inspect(tl)
   end
 
   def part_one(input) do
